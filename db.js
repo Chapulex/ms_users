@@ -8,7 +8,7 @@ const MONGO_DB = 'sharkinfo'; */
 const {
     MONGO_USERNAME,
     MONGO_PASSWORD,
-    MONGO_HOSTNAME,
+    MONGO_HOST,
     MONGO_PORT,
     MONGO_DB
 } = process.env;
@@ -18,7 +18,7 @@ const options = {
     reconnectInterval: 500,
     connectTimeoutMS: 10000,
 };
-const url = `mongodb://${MONGO_USERNAME}:${MONGO_PASSWORD}@${MONGO_HOSTNAME}:${MONGO_PORT}/${MONGO_DB}?authSource=admin`;
+const url = `mongodb://${MONGO_USERNAME}:${MONGO_PASSWORD}@${MONGO_HOST}:${MONGO_PORT}/${MONGO_DB}?authSource=admin`;
 
 mongoose.connect(url, options).then( function() {
     console.log('MongoDB is connected');
